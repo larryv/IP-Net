@@ -12,7 +12,7 @@ Understanding interactions between humans and objects is one of the fundamental 
 
   ```Shell
   IPNet_ROOT=/path/to/clone/IPNet
-  git clone https://github.com/vaesl/IP-Net $IPNet_ROOT
+  git clone https://github.com/vaesl/IP-Net "$IPNet_ROOT"
   ```
 - The code was tested on Ubuntu 18.04, with [Anaconda](https://www.anaconda.com/download) Python 3.6 and [PyTorch]((http://pytorch.org/)) v1.0.1. 
 NVIDIA GPUs are needed for testing. After install Anaconda, create a new conda environment, activate the environment and install pytorch1.0.1.
@@ -29,19 +29,19 @@ NVIDIA GPUs are needed for testing. After install Anaconda, create a new conda e
   ```
 - Compiling Center Pooling Layers.
   ```Shell
-  cd IPNet_ROOT/src/lib/models/networks/py_utils/_cpools/
+  cd "$IPNet_ROOT"/src/lib/models/networks/py_utils/_cpools/
   python setup.py install --user
   ```
 
 - Install [COCOAPI](https://github.com/cocodataset/cocoapi):
 
-  ~~~
-  # COCOAPI=/path/to/clone/cocoapi
-  git clone https://github.com/cocodataset/cocoapi.git $COCOAPI
-  cd $COCOAPI/PythonAPI
+  ```Shell
+  COCOAPI=/path/to/clone/cocoapi
+  git clone https://github.com/cocodataset/cocoapi.git "$COCOAPI"
+  cd "$COCOAPI"/PythonAPI
   make
   python setup.py install --user
-  ~~~
+  ```
 
 ## Download
 To evaluate the performance reported in the paper, V-COCO and HICO-DET dataset as well as our trained models need to be downloaded.
